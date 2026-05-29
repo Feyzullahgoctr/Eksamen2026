@@ -33,10 +33,12 @@ public class BankAccount {
 
     public void transfer(BankAccount target, double amount) {
 
-        if (isAmountAccepted(amount)){
+        if (isAmountAccepted(amount)) {
             withdraw(amount);
             target.deposit(amount);
-            System.out.println( amount + " kr. blev overført fra bruger " + owner + " til bruger " + target.owner +"\n");
+            System.out.println(amount + " kr. blev overført fra bruger " + owner + " til bruger " + target.owner + "\n");
+        } else {
+            System.out.println("Utilstrækkelig saldo");
         }
     }
 

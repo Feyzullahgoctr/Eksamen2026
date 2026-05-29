@@ -43,6 +43,7 @@ public class PhoneManagement {
                     System.exit(0);
                     break;
                 default:
+                    System.out.println("Ugyldig MenuID");
                     showMenu();
                     break;
             }
