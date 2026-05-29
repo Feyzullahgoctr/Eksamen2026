@@ -16,8 +16,14 @@ public class MessageApp {
     }
 
     public void remove(int input) {
-        messages.remove(input);
-        System.out.println("Message er fjernet");
+        // Hvis brugerens indeks er for stort, vises en fejl.
+        if (input >= messages.size()) {
+            System.out.println("Der er ikke besked number");
+        } else {
+            messages.remove(input);
+            System.out.println("Message er fjernet");
+        }
+
     }
 
     public void listAllMessages() {

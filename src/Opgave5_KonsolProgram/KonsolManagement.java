@@ -10,7 +10,7 @@ public class KonsolManagement {
         messageApp = new MessageApp();
     }
 
-    public  void start() {
+    public void start() {
 
         boolean flag = true;
         while (flag){
@@ -25,19 +25,14 @@ public class KonsolManagement {
                     messageApp.listAllMessages();
                     break;
                 case 3:
+                    // Hvis der ikke er nogen besked, vises en fejl.
                     if (messageApp.getMessages().isEmpty()) {
                         System.out.println("Der er ikke message");
                         System.out.println("========================");
                     } else {
                         messageApp.listAllMessages();
                         int beskedInput = TextUI.promptNumeric("Enter besked number");
-
-                        if (beskedInput > messageApp.getMessages().size()) {
-                            System.out.println("Der er ikke besked number");
-                            System.out.println("========================");
-                        } else {
-                            messageApp.remove(beskedInput);
-                        }
+                        messageApp.remove(beskedInput);
 
                     }
                     break;
