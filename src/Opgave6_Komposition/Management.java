@@ -29,6 +29,7 @@ public class Management {
                     flag = false;
                     break;
                 default:
+                    System.out.println("Ugyldig MenuID");
                     showMenu();
                     break;
             }
