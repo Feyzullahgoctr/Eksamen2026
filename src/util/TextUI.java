@@ -27,6 +27,13 @@ public class TextUI {
         }
     }
 
+    public static String promptText(String msg){
+        displayMsg(msg);
+        String input = sc.nextLine();
+
+        return input;
+    }
+
     public static double promptDouble(String msg) {
         displayMsg(msg);
         try {
@@ -37,13 +44,6 @@ public class TextUI {
             System.out.println("Please enter a double value");
             return promptDouble(msg);  // Rekursivt kald
         }
-    }
-
-    public static String promptText(String msg){
-        displayMsg(msg);
-        String input = sc.nextLine();
-
-        return input;
     }
 
 

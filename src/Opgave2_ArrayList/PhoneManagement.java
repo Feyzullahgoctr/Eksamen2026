@@ -21,36 +21,42 @@ public class PhoneManagement {
 
         phoneBook.printPhoneBook();
 
-        String input = TextUI.promptText("Indtast Navn :");
-        Contact contact = phoneBook.findByName(input);
+        boolean flag = true;
+        while (flag) {
 
-        if (contact == null) {
-            System.out.println(input + ", kontakt ikke fundet.");
-            System.out.println("=========================");
-        } else {
-            System.out.println(contact);
-            System.out.println("=========================");
+            String input = TextUI.promptText("Indtast Navn :");
+            Contact contact = phoneBook.findByName(input);
 
-            int menuInput = TextUI.promptNumeric("1. Ændre PhoneNummer \n2. Exit");
+            if (contact == null) {
+                System.out.println(input + ", kontakt ikke fundet.");
+                System.out.println("=========================");
+            } else {
+                System.out.println(contact);
+                System.out.println("=========================");
 
-            switch (menuInput) {
-                case 1:
-                    String newPhoneNummer = TextUI.promptText("Enter new phone nummer :");
-                    phoneBook.chanceContact(contact, newPhoneNummer);
-                    phoneBook.printPhoneBook();
-                    break;
-                case 2:
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Ugyldig MenuID");
-                    showMenu();
-                    break;
+                int menuInput = TextUI.promptNumeric("1. Ændre PhoneNummer \n2. Exit");
+
+                switch (menuInput) {
+                    case 1:
+                        String newPhoneNummer = TextUI.promptText("Enter new phone nummer :");
+                        phoneBook.chanceContact(contact, newPhoneNummer);
+                        phoneBook.printPhoneBook();
+                        break;
+                    case 2:
+                        flag = false;
+                        break;
+                    default:
+                        System.out.println("Ugyldig MenuID");
+                        showMenu();
+                        break;
+                }
+
             }
 
         }
 
     }
+
 
 
 }

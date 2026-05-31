@@ -67,7 +67,8 @@ public class SalesReader {
     }
 
     public double average() {
-        return (double) total() / salesValues.size();
+        double avg = (double) total() / salesValues.size();
+        return Math.round(avg * 100.) / 100.;
     }
 
     public int max() {
