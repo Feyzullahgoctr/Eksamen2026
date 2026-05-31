@@ -30,7 +30,6 @@ public class Management {
                     break;
                 default:
                     System.out.println("Ugyldig MenuID");
-                    showMenu();
                     break;
             }
 
